@@ -8,7 +8,9 @@
     "test": "jest",
     "pre-commit": "lint-staged"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-hook-form": "^7.43.2"
+  },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.4.0",

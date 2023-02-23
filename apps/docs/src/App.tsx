@@ -1,10 +1,18 @@
 import { useState } from "react";
+import Input from "ui/Inputs/Input/Input";
 import reactLogo from "./assets/react.svg";
-import { Button } from "ui";
+import { Button, Form } from "ui";
+import { useForm } from "react-hook-form";
 import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
+
+  const methods = useForm({
+    defaultValues: {
+      firstName: ""
+    }
+  });
 
   return (
     <div className="App">
@@ -25,6 +33,10 @@ function App() {
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
       <Button />
+
+      <Form {...methods}>
+        <Input name="firstName" />
+      </Form>
     </div>
   );
 }
