@@ -25,6 +25,6 @@
   "prettier": "@3sidedcube/prettier-config",
   "dependencies": {},
   "lint-staged": {
-    "**/*.{js,jsx,ts,tsx,json,css,mdx}": "prettier --write"
+    "./**/*.{js,jsx,ts,tsx,json,css,mdx}": "prettier --write"
   }
 }
