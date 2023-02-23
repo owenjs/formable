@@ -14,7 +14,7 @@
     "dev:storybook": "yarn workspace docs run storybook",
     "test": "yarn workspace ui run test",
     "prepare": "husky install",
-    "pre-commit": "lint-staged && yarn workspace docs run pre-commit && yarn workspace ui run pre-commit"
+    "pre-commit": "lint-staged"
   },
   "devDependencies": {
     "@3sidedcube/prettier-config": "^1.0.0",
