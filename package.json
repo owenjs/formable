@@ -28,6 +28,7 @@
   "dependencies": {},
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,json,css,mdx}": "prettier --write",
-    "**/*.{js,jsx,ts,tsx}": "eslint --fix"
+    "apps/playground/**/*.{js,jsx,ts,tsx}": "eslint --fix",
+    "packages/**/*.{js,jsx,ts,tsx}": "eslint --fix"
   }
 }
