@@ -1,6 +1,3 @@
-import { UseFormRegister, FieldValues, FieldPath } from "react-hook-form";
+import { UseFormRegisterReturn } from "react-hook-form";
 
-export type FormableInputComponent<T extends FieldValues> = {
-  register?: UseFormRegister<T>;
-  name: FieldPath<T>;
-};
+export type TNativeElementToOmit = "id" | "name" | keyof UseFormRegisterReturn;

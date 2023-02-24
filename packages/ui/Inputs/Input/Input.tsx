@@ -4,6 +4,8 @@ import * as React from "react";
 import InputContext from "./Context";
 import InputLabel from "./Label";
 import InputElement from "./Element";
+import TextareaElement from "./Elements/Textarea";
+import SelectElement from "./Elements/Select";
 import InputError from "./Error";
 
 type OwnInputProps<C extends React.ElementType> = {
@@ -29,6 +31,8 @@ const Input = <C extends React.ElementType = typeof React.Fragment>(props: Input
 
 export default Object.assign(Input, {
   Element: InputElement,
+  Textarea: TextareaElement,
+  Select: SelectElement,
   Label: InputLabel,
   Error: InputError
 });
