@@ -1,41 +1,42 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import Input from "ui/Inputs/Input/Input";
-import reactLogo from "./assets/react.svg";
-import { Button, Form } from "ui";
+import { Form } from "ui";
 import { useForm } from "react-hook-form";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   const methods = useForm({
     defaultValues: {
       firstName: ""
     }
   });
 
+  useEffect(() => {
+    methods.setError("firstName", {
+      type: "manual",
+      message: "Triple Check This"
+    });
+  }, [methods]);
+
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
-      <Button />
+      <Form methods={methods}>
+        <Input
+          as="div"
+          name="firstName"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            gap: "0.5rem"
+          }}
+        >
+          <Input.Label>First Name</Input.Label>
 
-      <Form {...methods}>
-        <Input name="firstName" />
+          <Input.Element placeholder="First Name" />
+
+          <Input.Error>{({ message }) => <p style={{ color: "red" }}>{message}</p>}</Input.Error>
+        </Input>
       </Form>
     </div>
   );

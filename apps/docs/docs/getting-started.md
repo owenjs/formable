@@ -16,7 +16,7 @@ yarn add @owenjs/formable
 
 ## Create your first Form
 
-  ```typescript jsx
+```typescript jsx
 import { Form, Input } from "@owenjs/formable";
 import { useForm } from "react-hook-form";
 
