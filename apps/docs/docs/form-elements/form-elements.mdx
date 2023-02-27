@@ -1,9 +1,8 @@
 ---
-id: form-elements
-slug: /
 sidebar_position: 2
 ---
-import DocCardList from '@theme/DocCardList';
+
+import DocCardList from "@theme/DocCardList";
 
 # Form Elements
 
@@ -12,9 +11,7 @@ Each Form Element you wish to render must be wrapped in the `<FormElement />` co
 ```typescript jsx
 import { FormElement } from "@owenjs/formable";
 
-<FormElement name="firstName">
-  ...
-</FormElement>
+<FormElement name="firstName">...</FormElement>;
 ```
 
 This component will register to the corresponding element to the `useForm` hook, referring to it as the `name` prop given
@@ -35,9 +32,7 @@ Each Form Element can be given a label using the `<FormElement.Label>` component
 
 ```typescript jsx
 <FormElement name="fistName">
-  <FormElement.Label>
-    First Name
-  </FormElement.Label>
+  <FormElement.Label>First Name</FormElement.Label>
 </FormElement>
 ```
 
@@ -72,20 +67,20 @@ All the styling is upto you. Each component allows you to pass the native `class
 The main FormElement component:
 
 | Props  | Default    | Description                                                                                           |
-|--------|------------|-------------------------------------------------------------------------------------------------------|
+| ------ | ---------- | ----------------------------------------------------------------------------------------------------- |
 | `as`   | `Fragment` | `String or Component`<br/><br/>The element or component the `FormElement` component should render as. |
 | `name` | `""`       | `String`<br/><br/>The `name` of the form element to register to the `useForm` hook                    |
 
 ### FormElement.Label
 
-The FormElement.Label component includes all props the native `<label />` element has, minus the `htmlFor` prop (we add this for you) 
+The FormElement.Label component includes all props the native `<label />` element has, minus the `htmlFor` prop (we add this for you)
 
 ### FormElement.Error
 
 The FormElement.Error component has no props, however a function child is required.
 
 | Render Prop | Description                                                                                                                                    |
-|-------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | `data`      | `{ message: string, message: string[] }`<br/><br/>The error message or messages present within the `useForm` hook for the current form element |
 
 ## Full Example
@@ -98,7 +93,7 @@ import { useForm } from "react-hook-form";
 
 const Component = () => {
   const methods = useForm();
-  
+
   return (
     <Form {...methods}>
       <FormElement name="firstName">
