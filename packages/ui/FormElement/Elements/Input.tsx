@@ -1,4 +1,4 @@
-import InputContext from "./Context";
+import InputContext from "../Context";
 import { TNativeElementToOmit } from "../../types/Input";
 import { DetailedHTMLProps, FC, InputHTMLAttributes, useContext } from "react";
 import { useFormContext } from "react-hook-form";

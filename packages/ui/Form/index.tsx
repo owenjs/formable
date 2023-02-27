@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, FormHTMLAttributes, PropsWithChildren } from "react";
 import { FormProvider, UseFormReturn, FieldValues } from "react-hook-form";
 
-export interface FormProps<T extends FieldValues>
+interface FormProps<T extends FieldValues>
   extends DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement> {
   methods: UseFormReturn<T>;
 }

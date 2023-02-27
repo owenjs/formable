@@ -1,17 +1,18 @@
 import InputContext from "../Context";
-import { TNativeElementToOmit } from "../../../types/Input";
-import { DetailedHTMLProps, FC, SelectHTMLAttributes, useContext, ReactNode } from "react";
+import { TNativeElementToOmit } from "../../types/Input";
+import { RecordWithRequiredKeys } from "../../types/utils";
+import { DetailedHTMLProps, SelectHTMLAttributes, useContext, ReactNode } from "react";
 import { useFormContext } from "react-hook-form";
 
-type TOption = { key?: string | number; value: string; label: string };
+type TOption = { value: string; label: string };
 
-export interface IProps
+export interface IProps<T extends TOption>
   extends Omit<DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>, TNativeElementToOmit> {
-  options: TOption[];
-  renderOption: (data: TOption) => ReactNode;
+  options: RecordWithRequiredKeys<keyof TOption, T>[];
+  renderOption: (data: RecordWithRequiredKeys<keyof TOption, T>) => ReactNode;
 }
 
-const SelectElement: FC<IProps> = props => {
+const SelectElement = <T extends TOption>(props: IProps<T>) => {
   const { options, renderOption, placeholder, ...rest } = props;
   const { id, name } = useContext(InputContext);
   const { register } = useFormContext();

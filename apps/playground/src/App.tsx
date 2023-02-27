@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import Input from "ui/Inputs/Input/Input";
-import { Form } from "ui";
+import { Form, FormElement } from "ui";
 import { useForm } from "react-hook-form";
 import "./App.css";
 
@@ -23,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <Form methods={methods} onSubmit={methods.handleSubmit(data => console.log(data))}>
-        <Input
+        <FormElement
           as="div"
           name="firstName"
           style={{
@@ -33,14 +32,14 @@ function App() {
             gap: "0.5rem"
           }}
         >
-          <Input.Label>First Name</Input.Label>
+          <FormElement.Label>First Name</FormElement.Label>
 
-          <Input.Element placeholder="First Name" />
+          <FormElement.Input placeholder="First Name" />
 
-          <Input.Error>{({ message }) => <p style={{ color: "red" }}>{message}</p>}</Input.Error>
-        </Input>
+          <FormElement.Error>{({ message }) => <p style={{ color: "red" }}>{message}</p>}</FormElement.Error>
+        </FormElement>
 
-        <Input
+        <FormElement
           as="div"
           name="names"
           style={{
@@ -50,14 +49,14 @@ function App() {
             gap: "0.5rem"
           }}
         >
-          <Input.Label>Names</Input.Label>
+          <FormElement.Label>Names</FormElement.Label>
 
-          <Input.Textarea />
+          <FormElement.Textarea />
 
-          <Input.Error>{({ message }) => <p style={{ color: "red" }}>{message}</p>}</Input.Error>
-        </Input>
+          <FormElement.Error>{({ message }) => <p style={{ color: "red" }}>{message}</p>}</FormElement.Error>
+        </FormElement>
 
-        <Input
+        <FormElement
           as="div"
           name="options"
           style={{
@@ -67,9 +66,9 @@ function App() {
             gap: "0.5rem"
           }}
         >
-          <Input.Label>Options</Input.Label>
+          <FormElement.Label>Options</FormElement.Label>
 
-          <Input.Select
+          <FormElement.Select
             placeholder="Please Select"
             options={[
               {
@@ -88,8 +87,8 @@ function App() {
             )}
           />
 
-          <Input.Error>{({ message }) => <p style={{ color: "red" }}>{message}</p>}</Input.Error>
-        </Input>
+          <FormElement.Error>{({ message }) => <p style={{ color: "red" }}>{message}</p>}</FormElement.Error>
+        </FormElement>
       </Form>
     </div>
   );
