@@ -7,10 +7,11 @@ export interface InputElementProps
   extends Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, TNativeElementToOmit> {}
 
 const InputElement: FC<InputElementProps> = props => {
+  const { type = "text", ...rest } = props;
   const { id, name } = useContext(InputContext);
   const { register } = useFormContext();
 
-  return <input {...register(name)} id={id} name={name} {...props} />;
+  return <input {...register(name)} type={type} id={id} name={name} {...rest} />;
 };
 
 export default InputElement;

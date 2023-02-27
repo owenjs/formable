@@ -17,7 +17,7 @@ yarn add @owenjs/formable
 ## Create your first Form
 
 ```typescript jsx
-import { Form, Input } from "@owenjs/formable";
+import { Form, FormElement } from "@owenjs/formable";
 import { useForm } from "react-hook-form";
 
 const Component = () => {
@@ -25,8 +25,13 @@ const Component = () => {
   
   return (
     <Form {...methods}>
-      <Input name="firstName" />
-      <Input name="lastName" />
+      <FormElement name="firstName">
+        <FormElement.Label>First Name</FormElement.Label>
+
+        <FormElement.Input placeholder="First Name" />
+
+        <FormElement.Error>{({ message }) => <p>{message}</p>}</FormElement.Error>
+      </FormElement>
     </Form>
   );
 };

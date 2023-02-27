@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "dev": "npm-run-all --parallel --print-label dev:*",
-    "dev:docs": "yarn workspace docs run dev",
+    "dev:docs": "yarn workspace docs run start",
     "dev:storybook": "yarn workspace docs run storybook",
     "test": "yarn workspace ui run test",
     "prepare": "husky install",

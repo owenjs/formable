@@ -1,0 +1,114 @@
+---
+id: form-elements
+slug: /
+sidebar_position: 2
+---
+import DocCardList from '@theme/DocCardList';
+
+# Form Elements
+
+Each Form Element you wish to render must be wrapped in the `<FormElement />` component
+
+```typescript jsx
+import { FormElement } from "@owenjs/formable";
+
+<FormElement name="firstName">
+  ...
+</FormElement>
+```
+
+This component will register to the corresponding element to the `useForm` hook, referring to it as the `name` prop given
+
+:::caution TypeScript
+The `name` prop is not strictly typed, meaning it is your responsibility to ensure the name of your element matches the ones expected in your `useForm` hook
+:::
+
+## Rendering the Element
+
+You can specify the type of element this form element will be using `<FormElement.{...}>`. See below all the available elements:
+
+<DocCardList />
+
+## Element Label
+
+Each Form Element can be given a label using the `<FormElement.Label>` component:
+
+```typescript jsx
+<FormElement name="fistName">
+  <FormElement.Label>
+    First Name
+  </FormElement.Label>
+</FormElement>
+```
+
+## Element Error
+
+Error handling is easy with the `useForm` hook, and we recommend powering it with [yup](/docs/error-handling/install-yup)
+
+Each Form Element can be given an error message using the `<FormElement.Error>` component:
+
+```typescript jsx
+<FormElement name="fistName">
+  <FormElement.Error>
+    ({ message }) => <p>{message}</p>
+  </FormElement.Error>
+</FormElement>
+```
+
+This error message will automatically display if the `useForm` hook contains an error for the corresponding element ("firstName").
+
+## Styling
+
+All the styling is upto you. Each component allows you to pass the native `className` prop and any other native props you need, for example:
+
+```typescript jsx
+<FormElement.Label className="text-gray-800">First Name</FormElement.Label>
+```
+
+## Component API
+
+### FormElement
+
+The main FormElement component:
+
+| Props  | Default    | Description                                                                                           |
+|--------|------------|-------------------------------------------------------------------------------------------------------|
+| `as`   | `Fragment` | `String or Component`<br/><br/>The element or component the `FormElement` component should render as. |
+| `name` | `""`       | `String`<br/><br/>The `name` of the form element to register to the `useForm` hook                    |
+
+### FormElement.Label
+
+The FormElement.Label component includes all props the native `<label />` element has, minus the `htmlFor` prop (we add this for you) 
+
+### FormElement.Error
+
+The FormElement.Error component has no props, however a function child is required.
+
+| Render Prop | Description                                                                                                                                    |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| `data`      | `{ message: string, message: string[] }`<br/><br/>The error message or messages present within the `useForm` hook for the current form element |
+
+## Full Example
+
+Here's a full example using the native text input:
+
+```typescript jsx
+import { Form, FormElement } from "@owenjs/formable";
+import { useForm } from "react-hook-form";
+
+const Component = () => {
+  const methods = useForm();
+  
+  return (
+    <Form {...methods}>
+      <FormElement name="firstName">
+        <FormElement.Label>First Name</FormElement.Label>
+
+        <FormElement.Input placeholder="First Name" />
+
+        <FormElement.Error>{({ message }) => <p>{message}</p>}</FormElement.Error>
+      </FormElement>
+    </Form>
+  );
+};
+```

@@ -2,15 +2,17 @@
 sidebar_position: 1
 ---
 
-# Native Input
+# Input
 
 The native input is the simplest of them all
 
 ```typescript jsx
-<Input name="firstName" />
+import { FormElement } from "@owenjs/formable";
+
+<FormElement.Input />
 ```
 
-The Input component includes all the native props the regular `<input />` element has, while automatically registering the element to the `useForm` hook
+The `<FormElement.Input />` component includes all the native props the regular `<input />` element has, while automatically registering the element to the `useForm` hook
 
 ### Use within the Form element
 
