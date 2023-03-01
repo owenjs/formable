@@ -10,11 +10,11 @@ const config = {
   tagline: "Formable",
   favicon: "img/favicon.ico",
 
-  // Set the production url of your site here
-  url: "https://your-docusaurus-test-site.com",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  url: "https://owenjs.github.io", // Your website URL
+  baseUrl: "/formable/",
+  projectName: "owenjs.github.io",
+  organizationName: "owenjs",
+  trailingSlash: false,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -90,8 +90,8 @@ const config = {
         copyright: `Built with Docusaurus.`
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme
+        theme: require("prism-react-renderer/themes/vsLight"),
+        darkTheme: require("prism-react-renderer/themes/vsDark")
       }
     })
 };

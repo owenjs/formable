@@ -1,9 +1,14 @@
 {
-  "name": "ui",
-  "version": "1.0.0",
+  "name": "@owenjs/formable",
+  "version": "0.1.1",
   "main": "./index.tsx",
   "types": "./index.tsx",
   "license": "MIT",
+  "homepage": "https://github.com/owenjs/formable",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/owenjs/formable"
+  },
   "scripts": {
     "test": "jest",
     "pre-commit": "lint-staged"

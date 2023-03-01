@@ -6,15 +6,15 @@ sidebar_position: 1
 
 The native input is the simplest of them all
 
-```typescript jsx
+```tsx
 import { FormElement } from "@owenjs/formable";
 
 <FormElement.Input />
 ```
 
-The `<FormElement.Input />` component includes all the native props the regular `<input />` element has, while automatically registering the element to the `useForm` hook.
+The `<FormElement.Input />` component includes all the native props the regular `<input />` element has, while automatically registering the element to the `useForm` hook context.
 
-Ensure the element is wrapped in the [FormElement](/form-elements/) component so that is it registered to your `useForm` hook correctly.
+Ensure the element is wrapped in the [`<FormElement />`](/form-elements/) component so that is it registered to your `useForm` hook context correctly.
 
 ## Input Types
 
@@ -22,13 +22,13 @@ Under the hook this component is a wrapper for the native `<input />` element. M
 
 For example if you wished this element to be a number input:
 
-```typescript jsx
+```tsx
 <FormElement.Input type="number" />
 ```
 
 Or a file:
 
-```typescript jsx
+```tsx
 <FormElement.Input type="file" />
 ```
 
@@ -38,17 +38,17 @@ Or a file:
 
 Use the native `className` prop as the styling is completely up to you!
 
-```typescript jsx
+```tsx
 <FormElement.Input className="my-class-name" />
 ```
 
 ## Error Handling
 
-Error handling is easy with the `useForm` hook, and we recommend powering it with [yup](/docs/error-handling)
+Error handling is easy with the `useForm` hook, and we recommend powering it with [yup](/error-handling)
 
 ## Component API
 
-The component inherits all the available props from the native `<input />` element: [mdn docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+The component inherits all the available props from the native [`<input />`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) element.
 
 :::caution
 However you can't use the `id` or `name` prop as we generate these automatically.
@@ -58,17 +58,19 @@ You also can't use `onChange`, `onBlur`, `ref`, `disabled` as these are handled 
 
 ## Full Example
 
-Here's a full example using the native text input:
+Here's a full example using a text input:
 
-```typescript jsx
+```tsx
 import { Form, FormElement } from "@owenjs/formable";
 import { useForm } from "react-hook-form";
 
+type FormData = { firstName: string };
+
 const Component = () => {
-  const methods = useForm();
+  const methods = useForm<FormData>();
   
   return (
-    <Form {...methods}>
+    <Form methods={methods}>
       <FormElement name="firstName">
         <FormElement.Label>First Name</FormElement.Label>
 

@@ -1,20 +1,22 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 import DocCardList from "@theme/DocCardList";
 
 # Form Elements
 
-Each Form Element you wish to render must be wrapped in the `<FormElement />` component
+Each form element you wish to render must be wrapped in the `<FormElement />` component
 
-```typescript jsx
+```tsx
 import { FormElement } from "@owenjs/formable";
 
 <FormElement name="firstName">...</FormElement>;
 ```
 
-This component will register to the corresponding element to the `useForm` hook, referring to it as the `name` prop given
+This component will register to the corresponding element to the `useForm` hook context, referring to it as the `name` prop given.
+
+Ensure the component is wrapped in the [`<Form />`](/form) component, so that it registers to the correct `useForm` hook context.
 
 :::caution TypeScript
 The `name` prop is not strictly typed, meaning it is your responsibility to ensure the name of your element matches the ones expected in your `useForm` hook
@@ -30,7 +32,7 @@ You can specify the type of element this form element will be using `<FormElemen
 
 Each Form Element can be given a label using the `<FormElement.Label>` component:
 
-```typescript jsx
+```tsx
 <FormElement name="fistName">
   <FormElement.Label>First Name</FormElement.Label>
 </FormElement>
@@ -42,7 +44,7 @@ Error handling is easy with the `useForm` hook, and we recommend powering it wit
 
 Each Form Element can be given an error message using the `<FormElement.Error>` component:
 
-```typescript jsx
+```tsx
 <FormElement name="fistName">
   <FormElement.Error>
     ({ message }) => <p>{message}</p>
@@ -54,9 +56,17 @@ This error message will automatically display if the `useForm` hook contains an 
 
 ## Styling
 
-All the styling is upto you. Each component allows you to pass the native `className` prop and any other native props you need, for example:
+All the styling is up to you. Each component allows you to pass the native `className` prop and any other native props you need, for example:
 
-```typescript jsx
+```tsx
+<FormElement as="div" className="flex flex-col">
+  ...
+</FormElement>
+```
+
+Or:
+
+```tsx
 <FormElement.Label className="text-gray-800">First Name</FormElement.Label>
 ```
 
@@ -73,7 +83,7 @@ The main FormElement component:
 
 ### FormElement.Label
 
-The FormElement.Label component includes all props the native `<label />` element has, minus the `htmlFor` prop (we add this for you)
+The FormElement.Label component includes all props the native [`<label />`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) element has, minus the `htmlFor` prop (we add this for you)
 
 ### FormElement.Error
 
@@ -87,15 +97,17 @@ The FormElement.Error component has no props, however a function child is requir
 
 Here's a full example using the native text input:
 
-```typescript jsx
+```tsx
 import { Form, FormElement } from "@owenjs/formable";
 import { useForm } from "react-hook-form";
 
+type FormData = { firstName: string };
+
 const Component = () => {
-  const methods = useForm();
+  const methods = useForm<FormData>();
 
   return (
-    <Form {...methods}>
+    <Form methods={methods}>
       <FormElement name="firstName">
         <FormElement.Label>First Name</FormElement.Label>
 

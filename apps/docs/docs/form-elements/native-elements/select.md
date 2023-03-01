@@ -6,7 +6,7 @@ sidebar_position: 3
 
 You bet native selects are easy.
 
-```typescript jsx
+```tsx
 import { FormElement } from "@owenjs/formable";
 
 <FormElement.Select
@@ -25,9 +25,9 @@ import { FormElement } from "@owenjs/formable";
 />
 ```
 
-The `<FormElement.Select />` component includes all the native props the regular `<select />` element has, while automatically registering the element to the useForm hook.
+The `<FormElement.Select />` component includes all the native props the regular `<select />` element has, while automatically registering the element to the useForm hook context.
 
-Ensure the element is wrapped in the [FormElement](/form-elements/) component so that is it registered to your `useForm` hook correctly.
+Ensure the element is wrapped in the [`<FormElement />`](/form-elements/) component so that is it registered to your `useForm` hook context correctly.
 
 ## Select Options
 
@@ -37,7 +37,7 @@ Each option within the `options` prop is rendered separately as an `<option />` 
 
 Use the native `className` prop as the styling is completely up to you!
 
-```typescript jsx
+```tsx
 <FormElement.Select className="my-class-name" />
 ```
 
@@ -47,7 +47,7 @@ Error handling is easy with the `useForm` hook, and we recommend powering it wit
 
 ## Component API
 
-The component inherits all the available props from the native `<select />` element: [mdn docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select)
+The component inherits all the available props from the native [`<select />`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) element.
 
 :::caution
 However you can't use the `id` or `name` prop as we generate these automatically.
@@ -63,18 +63,20 @@ As well as:
 
 ## Full Example
 
-Here's a full example using the native text input:
+Here's a full example using the select input:
 
-```typescript jsx
+```tsx
 import { Form, FormElement } from "@owenjs/formable";
 import { useForm } from "react-hook-form";
 
+type FormData = { bestSupermarket: string };
+
 const Component = () => {
-  const methods = useForm();
+  const methods = useForm<FormData>();
   
   return (
-    <Form {...methods}>
-      <FormElement name="best-supermarket">
+    <Form methods={methods}>
+      <FormElement name="bestSupermarket">
         <FormElement.Label>Best Supermarket</FormElement.Label>
 
         <FormElement.Select

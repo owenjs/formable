@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # Getting Started
 
-:::danger Not currently published on NPM
-ToDo
-:::
-
 Install Formable
+
+:::danger
+For now your project **must** be able to compile TypeScript files
+:::
 
   ```bash
 yarn add @owenjs/formable
@@ -16,15 +16,21 @@ yarn add @owenjs/formable
 
 ## Create your first Form
 
-```typescript jsx
+```tsx
 import { Form, FormElement } from "@owenjs/formable";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type FormData = { firstName: string };
 
 const Component = () => {
-  const methods = useForm();
+  const methods = useForm<FormData>();
+  
+  const onSubmit: SubmitHandler<FormData> = (data) => {
+    console.log(data); // { firstName: "..." }
+  };
   
   return (
-    <Form {...methods}>
+    <Form methods={methods} onSubmit={methods.handleSubmit(onSubmit)}>
       <FormElement name="firstName">
         <FormElement.Label>First Name</FormElement.Label>
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # Error Handling
@@ -12,7 +12,7 @@ yarn add @hookform/resolvers yup
 
 Here's a full example using yup as form validation:
 
-```typescript jsx
+```tsx
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
@@ -34,12 +34,11 @@ const Component = () => {
   });
 
   return (
-    <Form {...methods}>
+    <Form methods={methods}>
       <FormElement name="firstName">
         <FormElement.Label>First Name</FormElement.Label>
 
         <FormElement.Input placeholder="First Name" />
-        
         
         <FormElement.Error>{({ message }) => <p>{message}</p>}</FormElement.Error>
       </FormElement>

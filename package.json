@@ -4,6 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "private": true,
+  "homepage": "https://github.com/owenjs/formable",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/owenjs/formable"
+  },
   "workspaces": [
     "./apps/*",
     "./packages/*"
@@ -13,6 +18,7 @@
     "dev:docs": "yarn workspace docs run start",
     "dev:playground": "yarn workspace playground run dev",
     "test": "yarn workspace ui run test",
+    "deploy": "yarn workspace docs run deploy",
     "prepare": "husky install",
     "pre-commit": "lint-staged --concurrent false"
   },

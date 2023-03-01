@@ -6,21 +6,21 @@ sidebar_position: 2
 
 The native textarea is easy too!
 
-```typescript jsx
+```tsx
 import { FormElement } from "@owenjs/formable";
 
 <FormElement.Textarea />
 ```
 
-The `<FormElement.Textarea />` component includes all the native props the regular `<textarea />` element has, while automatically registering the element to the `useForm` hook.
+The `<FormElement.Textarea />` component includes all the native props the regular `<textarea />` element has, while automatically registering the element to the `useForm` hook context.
 
-Ensure the element is wrapped in the [FormElement](/form-elements/) component so that is it registered to your `useForm` hook correctly.
+Ensure the element is wrapped in the [`<FormElement />`](/form-elements/) component so that is it registered to your `useForm` hook context correctly.
 
 ## Styling
 
 Use the native `className` prop as the styling is completely up to you!
 
-```typescript jsx
+```tsx
 <FormElement.Textarea className="my-class-name" />
 ```
 
@@ -30,7 +30,7 @@ Error handling is easy with the `useForm` hook, and we recommend powering it wit
 
 ## Component API
 
-The component inherits all the available props from the native `<textarea />` element: [mdn docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea)
+The component inherits all the available props from the native [`<textarea />`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) element.
 
 :::caution
 However you can't use the `id` or `name` prop as we generate these automatically.
@@ -40,17 +40,19 @@ You also can't use `onChange`, `onBlur`, `ref`, `disabled` as these are handled 
 
 ## Full Example
 
-Here's a full example using the native text input:
+Here's a full example using the textarea input:
 
-```typescript jsx
+```tsx
 import { Form, FormElement } from "@owenjs/formable";
 import { useForm } from "react-hook-form";
 
+type FormData = { info: string };
+
 const Component = () => {
-  const methods = useForm();
+  const methods = useForm<FormData>();
   
   return (
-    <Form {...methods}>
+    <Form methods={methods}>
       <FormElement name="info">
         <FormElement.Label>Information</FormElement.Label>
 
