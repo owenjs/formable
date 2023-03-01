@@ -1,6 +1,6 @@
 import InputContext from "../Context";
 import { TNativeElementToOmit } from "../../types/Input";
-import { DetailedHTMLProps, SelectHTMLAttributes, useContext, ReactNode, FC } from "react";
+import { DetailedHTMLProps, SelectHTMLAttributes, useContext, FC } from "react";
 import { useFormContext } from "react-hook-form";
 
 type TOption = { key: number | string; value: string; label: string };
