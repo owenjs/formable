@@ -1,19 +1,17 @@
 import InputContext from "../Context";
 import { TNativeElementToOmit } from "../../types/Input";
-import { RecordWithRequiredKeys } from "../../types/utils";
-import { DetailedHTMLProps, SelectHTMLAttributes, useContext, ReactNode } from "react";
+import { DetailedHTMLProps, SelectHTMLAttributes, useContext, ReactNode, FC } from "react";
 import { useFormContext } from "react-hook-form";
 
-type TOption = { value: string; label: string };
+type TOption = { key: number | string; value: string; label: string };
 
-export interface IProps<T extends TOption>
+export interface IProps
   extends Omit<DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>, TNativeElementToOmit> {
-  options: RecordWithRequiredKeys<keyof TOption, T>[];
-  renderOption: (data: RecordWithRequiredKeys<keyof TOption, T>) => ReactNode;
+  options: TOption[];
 }
 
-const SelectElement = <T extends TOption>(props: IProps<T>) => {
-  const { options, renderOption, placeholder, ...rest } = props;
+const SelectElement: FC<IProps> = props => {
+  const { options, placeholder, ...rest } = props;
   const { id, name } = useContext(InputContext);
   const { register } = useFormContext();
 
@@ -25,7 +23,12 @@ const SelectElement = <T extends TOption>(props: IProps<T>) => {
           {placeholder}
         </option>
       )}
-      {options.map(option => renderOption(option))}
+
+      {options.map(({ key, value, label }) => (
+        <option key={key} value={value}>
+          {label}
+        </option>
+      ))}
     </select>
   );
 };

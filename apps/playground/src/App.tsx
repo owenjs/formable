@@ -72,19 +72,16 @@ function App() {
             placeholder="Please Select"
             options={[
               {
+                key: 1,
                 value: "1",
                 label: "1"
               },
               {
+                key: 2,
                 value: "2",
                 label: "2"
               }
             ]}
-            renderOption={({ value, label }) => (
-              <option key={value} value={value}>
-                {label}
-              </option>
-            )}
           />
 
           <FormElement.Error>{({ message }) => <p style={{ color: "red" }}>{message}</p>}</FormElement.Error>

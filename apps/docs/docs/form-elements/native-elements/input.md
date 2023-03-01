@@ -12,9 +12,9 @@ import { FormElement } from "@owenjs/formable";
 <FormElement.Input />
 ```
 
-The `<FormElement.Input />` component includes all the native props the regular `<input />` element has, while automatically registering the element to the `useForm` hook
+The `<FormElement.Input />` component includes all the native props the regular `<input />` element has, while automatically registering the element to the `useForm` hook.
 
-Ensure the element is wrapped in the [FormElement](/docs/form-elements/) component so that is it register to your `useForm` hook correctly.
+Ensure the element is wrapped in the [FormElement](/form-elements/) component so that is it registered to your `useForm` hook correctly.
 
 ## Input Types
 
@@ -44,7 +44,7 @@ Use the native `className` prop as the styling is completely up to you!
 
 ## Error Handling
 
-Error handling is easy with the `useForm` hook, and we recommend powering it with [yup](/docs/error-handling/install-yup)
+Error handling is easy with the `useForm` hook, and we recommend powering it with [yup](/docs/error-handling)
 
 ## Full Example
 
@@ -70,4 +70,3 @@ const Component = () => {
   );
 };
 ```
-
