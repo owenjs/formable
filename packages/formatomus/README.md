@@ -17,5 +17,5 @@ npm install @formatomus/core react-hook-form @hookform/error-message
 Add HeadlessUI form components to your Formatomus forms!
 
 ```shell
-npm install @formatomus/headlessui @formatomus/headlessui @headlessui/react
+npm install @formatomus/headlessui @headlessui/react
 ```
