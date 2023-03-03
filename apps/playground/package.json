@@ -12,11 +12,16 @@
     "pre-commit": "lint-staged"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.12",
+    "@hookform/error-message": "^2.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.3"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
+    "@formatomus/core": "*",
+    "@formatomus/headlessui": "*",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -31,8 +36,6 @@
     "eslint": "^8.0.0",
     "eslint-config-react-app": "^7.0.1",
     "typescript": "^4.9.3",
-    "vite": "^4.1.0",
-    "@formatomus/core": "*",
-    "@formatomus/headlessui": "*"
+    "vite": "^4.1.0"
   }
 }

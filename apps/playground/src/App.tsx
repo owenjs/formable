@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 import { Form, FormElement } from "@formatomus/core";
 import { Switch } from "@formatomus/headlessui";
 import { useForm } from "react-hook-form";

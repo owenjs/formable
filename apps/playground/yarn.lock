@@ -1360,10 +1360,32 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@formatomus/core@*":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@formatomus/core/-/core-0.1.4.tgz#1b59f5df4d1458f7a58232c5bba7564884de277c"
+  integrity sha512-xm7Hcl3p0Z8EbEGVrOCZoVZXPTx/WgJB/pwCFiPPUuDOEqNs9BQrLCIfB/Xi1wLHUIi3+S4OFIdH0rDf2BA0GQ==
+
+"@formatomus/headlessui@*":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@formatomus/headlessui/-/headlessui-0.1.3.tgz#87d86e92da868569f372f91e475755f82bccee1f"
+  integrity sha512-JXISugu2Wuk3YMq/PicFeleNQrZFGPP1bYERMWUcotVWs7GU4YRJSjZ4KmNZPevAnIHH57MHyje+M/FIMyKNGQ==
+
 "@gar/promisify@^1.0.1":
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.3.tgz#555193ab2e3bb3b6adc3d551c9c030d9e860daf6"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
+
+"@headlessui/react@^1.7.12":
+  version "1.7.12"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.7.12.tgz#9ab2baa3c4f632782631e00937f9531a34033619"
+  integrity sha512-FhSx5V+Qp0GvbTpaxyS+ymGDDNntCacClWsk/d8Upbr19g3AsPbjfPk4+m2CgJGcuCB5Dz7LpUIOAbvQTyjL2g==
+  dependencies:
+    client-only "^0.0.1"
+
+"@hookform/error-message@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@hookform/error-message/-/error-message-2.0.1.tgz#6a37419106e13664ad6a29c9dae699ae6cd276b8"
+  integrity sha512-U410sAr92xgxT1idlu9WWOVjndxLdgPUHEB8Schr27C9eh7/xUnITWpCMF93s+lGiG++D4JnbSnrb5A21AdSNg==
 
 "@humanwhocodes/config-array@^0.11.8":
   version "0.11.8"
@@ -4249,6 +4271,11 @@ cli-table3@^0.6.1:
     string-width "^4.2.0"
   optionalDependencies:
     "@colors/colors" "1.5.0"
+
+client-only@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
+  integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
 
 cliui@^7.0.2:
   version "7.0.4"
@@ -8973,6 +9000,11 @@ react-element-to-jsx-string@^14.3.4:
     "@base2/pretty-print-object" "1.0.1"
     is-plain-object "5.0.0"
     react-is "17.0.2"
+
+react-hook-form@^7.43.3:
+  version "7.43.3"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.43.3.tgz#780af64ea1f3c5864626a377e302bfcc7750af6f"
+  integrity sha512-LV6Fixh+hirrl6dXbM78aB6n//82aKbsNbcofF3wc6nx1UJLu3Jj/gsg1E5C9iISnLX+du8VTUyBUz2aCy+H7w==
 
 react-inspector@^5.1.0:
   version "5.1.1"
