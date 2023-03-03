@@ -11,7 +11,7 @@ const config = {
   favicon: "img/favicon.ico",
 
   url: "https://owenjs.github.io", // Your website URL
-  baseUrl: "/formable/",
+  baseUrl: "/formatomus/",
   projectName: "owenjs.github.io",
   organizationName: "owenjs",
   trailingSlash: false,
@@ -41,7 +41,7 @@ const config = {
           routeBasePath: "/",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/owenjs/formable/tree/main/apps/docs"
+          editUrl: "https://github.com/owenjs/formatomus/tree/main/apps/docs"
         },
         blog: false,
         theme: {
@@ -64,7 +64,7 @@ const config = {
         // },
         items: [
           {
-            href: "https://github.com/owenjs/formable",
+            href: "https://github.com/owenjs/formatomus",
             label: "GitHub",
             position: "right"
           }

@@ -13,6 +13,7 @@ yarn add @hookform/resolvers yup
 Here's a full example using yup as form validation:
 
 ```tsx
+import { Form, FormElement } from "@formatomus/core";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";

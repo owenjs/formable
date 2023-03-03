@@ -4,7 +4,7 @@ Unstyled HeadlessUI form components which register to [react-hook-form](https://
 
 ## Docs
 
-[https://owenjs.github.io/formable/](https://owenjs.github.io/formable/)
+[https://owenjs.github.io/formatomus/](https://owenjs.github.io/formatomus/)
 
 ## Install
 

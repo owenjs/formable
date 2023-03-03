@@ -4,10 +4,10 @@
   "main": "./index.tsx",
   "types": "./index.tsx",
   "license": "MIT",
-  "homepage": "https://github.com/owenjs/formable",
+  "homepage": "https://owenjs.github.io/formatomus/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/owenjs/formable"
+    "url": "https://github.com/owenjs/formatomus"
   },
   "scripts": {
     "test": "jest",
