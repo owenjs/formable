@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Form
 
-Use the `<Form />` component to create individual forms and combine it with the methods returned for your `useForm` hook.
+Use the `<Form />` component to create individual forms and combine it with the methods returned from your `useForm` hook.
 
 ```tsx
 import { Form } from "@formatomus/core";
