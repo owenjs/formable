@@ -81,6 +81,10 @@ const config = {
                 href: "https://react-hook-form.com/"
               },
               {
+                label: "HeadlessUI",
+                href: "https://headlessui.com/"
+              },
+              {
                 label: "Coded with ❤️ @owenjs",
                 href: "https://github.com/owenjs"
               }

@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Getting Started
 
+Formatomus - Unstyled React form components which register to [react-hook-form](https://react-hook-form.com/) context automatically.
+
 Install Formatomus
 
 :::danger
