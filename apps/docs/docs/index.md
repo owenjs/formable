@@ -13,7 +13,7 @@ For now your project **must** be able to compile TypeScript files
 :::
 
   ```bash
-yarn add @formatomus/core
+yarn add @formatomus/core react-hook-form @hookform/error-message
 ```
 
 ## Create your first Form

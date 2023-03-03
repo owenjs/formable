@@ -9,7 +9,7 @@ Unstyled React form components which register to [react-hook-form](https://react
 ## Install
 
 ```shell
-npm install @formatomus/core
+npm install @formatomus/core react-hook-form @hookform/error-message
 ```
 
 ## HeadlessUI

@@ -11,5 +11,5 @@ Unstyled HeadlessUI form components which register to [react-hook-form](https://
 `@formatomus/core` must be install for this package to work
 
 ```shell
-npm install @formatomus/core @formatomus/headlessui @headlessui/react
+npm install @formatomus/core react-hook-form @hookform/error-message @formatomus/headlessui @headlessui/react
 ```
