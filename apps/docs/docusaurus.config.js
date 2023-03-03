@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Formable",
-  tagline: "Formable",
+  title: "Formatomus",
+  tagline: "Unstyled React form components which register to react-hook-form context automatically.",
   favicon: "img/favicon.ico",
 
   url: "https://owenjs.github.io", // Your website URL
@@ -19,7 +19,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "owenjs", // Usually your GitHub org/user name.
-  projectName: "formable", // Usually your repo name.
+  projectName: "formatomus", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -57,7 +57,7 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "Formable",
+        title: "Formatomus",
         // logo: {
         //   alt: "My Site Logo",
         //   src: "img/logo.svg"

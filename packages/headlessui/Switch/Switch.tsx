@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useContext } from "react";
 import { Switch as HeadlessuiSwitch, SwitchProps as HeadlessuiSwitchProps } from "@headlessui/react";
-import { InputContext } from "@owenjs/formable";
+import { InputContext } from "@formatomus/core";
 import { useController, useFormContext } from "react-hook-form";
 
 type SwitchProps<C extends React.ElementType> = Omit<

@@ -7,7 +7,7 @@ sidebar_position: 2
 The native textarea is easy too!
 
 ```tsx
-import { FormElement } from "@owenjs/formable";
+import { FormElement } from "@formatomus/core";
 
 <FormElement.Textarea />
 ```
@@ -43,7 +43,7 @@ You also can't use `onChange`, `onBlur`, `ref`, `disabled` as these are handled 
 Here's a full example using the textarea input:
 
 ```tsx
-import { Form, FormElement } from "@owenjs/formable";
+import { Form, FormElement } from "@formatomus/core";
 import { useForm } from "react-hook-form";
 
 type FormData = { info: string };

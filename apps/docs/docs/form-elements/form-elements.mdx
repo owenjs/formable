@@ -9,7 +9,7 @@ import DocCardList from "@theme/DocCardList";
 Each form element you wish to render must be wrapped in the `<FormElement />` component
 
 ```tsx
-import { FormElement } from "@owenjs/formable";
+import { FormElement } from "@formatomus/core";
 
 <FormElement name="firstName">...</FormElement>;
 ```
@@ -98,7 +98,7 @@ The FormElement.Error component has no props, however a function child is requir
 Here's a full example using the native text input:
 
 ```tsx
-import { Form, FormElement } from "@owenjs/formable";
+import { Form, FormElement } from "@formatomus/core";
 import { useForm } from "react-hook-form";
 
 type FormData = { firstName: string };

@@ -7,7 +7,7 @@
   "devDependencies": {
     "@headlessui/react": "^1.7.12",
     "@hookform/error-message": "^2.0.1",
-    "@owenjs/formable": "*",
+    "@formatomus/core": "*",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.4.0",
     "@types/react": "^18.0.28",

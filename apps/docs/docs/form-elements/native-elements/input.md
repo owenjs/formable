@@ -7,7 +7,7 @@ sidebar_position: 1
 The native input is the simplest of them all
 
 ```tsx
-import { FormElement } from "@owenjs/formable";
+import { FormElement } from "@formatomus/core";
 
 <FormElement.Input />
 ```
@@ -61,7 +61,7 @@ You also can't use `onChange`, `onBlur`, `ref`, `disabled` as these are handled 
 Here's a full example using a text input:
 
 ```tsx
-import { Form, FormElement } from "@owenjs/formable";
+import { Form, FormElement } from "@formatomus/core";
 import { useForm } from "react-hook-form";
 
 type FormData = { firstName: string };

@@ -7,7 +7,7 @@ sidebar_position: 3
 You bet native selects are easy.
 
 ```tsx
-import { FormElement } from "@owenjs/formable";
+import { FormElement } from "@formatomus/core";
 
 <FormElement.Select
   options={[
@@ -66,7 +66,7 @@ As well as:
 Here's a full example using the select input:
 
 ```tsx
-import { Form, FormElement } from "@owenjs/formable";
+import { Form, FormElement } from "@formatomus/core";
 import { useForm } from "react-hook-form";
 
 type FormData = { bestSupermarket: string };

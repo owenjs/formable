@@ -4,20 +4,20 @@ sidebar_position: 1
 
 # Getting Started
 
-Install Formable
+Install Formatomus
 
 :::danger
 For now your project **must** be able to compile TypeScript files
 :::
 
   ```bash
-yarn add @owenjs/formable
+yarn add @formatomus/core
 ```
 
 ## Create your first Form
 
 ```tsx
-import { Form, FormElement } from "@owenjs/formable";
+import { Form, FormElement } from "@formatomus/core";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type FormData = { firstName: string };

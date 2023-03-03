@@ -7,7 +7,7 @@ sidebar_position: 2
 Use the `<Form />` component to create individual forms and combine it with the methods returned for your `useForm` hook.
 
 ```tsx
-import { Form } from "@owenjs/formable";
+import { Form } from "@formatomus/core";
 import { useForm } from "react-hook-form";
 
 const Component = () => {
@@ -32,7 +32,7 @@ The `useForm` hook must be strictly typed to avoid TypeScript complaining
 :::
 
 ```tsx
-import { Form, FormElement } from "@owenjs/formable";
+import { Form, FormElement } from "@formatomus/core";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 // highlight-next-line
