@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Select
 
-You bet native selects are easy.
+You bet native selects are easy
 
 ```tsx
 import { FormElement } from "@formatomus/core";
@@ -27,7 +27,7 @@ import { FormElement } from "@formatomus/core";
 
 The `<FormElement.Select />` component includes all the native props the regular `<select />` element has, while automatically registering the element to the useForm hook context.
 
-Ensure the element is wrapped in the [`<FormElement />`](/form-elements/) component so that is it registered to your `useForm` hook context correctly.
+Ensure the component is wrapped in the [`<FormElement />`](/form-elements/) component so that is it registered to your `useForm` hook context correctly.
 
 ## Select Options
 

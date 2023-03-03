@@ -1,0 +1,81 @@
+---
+sidebar_position: 2
+---
+
+import DocCardList from "@theme/DocCardList";
+
+# HeadlessUI Elements
+
+You can also add [HeadlessUI](https://headlessui.com/) form components to Formatomus, meaning the HeadlessUI components will also automatically register themselves to the `useForm` context.
+
+For this to work you must install the following:
+
+:::danger
+For now your project **must** be able to compile TypeScript files
+:::
+
+```bash
+yarn add @formatomus/headlessui
+```
+
+Here are all the available HeadlessUI form components that work:
+
+<DocCardList />
+
+## Use within Formatomus
+
+For the HeadlessUI components to work with Formatomus you must wrap the component with the `<FormElement />` component like the regular native elements. It's that simple!
+
+```tsx
+import { FormElement } from "@formatomus/core";
+import { Switch } from "@formatomus/headlessui";
+
+<FormElement name="switch">
+  <Switch />
+</FormElement>;
+```
+
+## Error Handling
+
+Error handling with HeadlessUI components are still as simple as with the native elements in Formatomus
+
+```tsx
+import { FormElement } from "@formatomus/core";
+import { Switch } from "@formatomus/headlessui";
+
+<FormElement name="switch">
+  <Switch />
+  // highlight-next-line
+  <FormElement.Error>{({ message }) => <p>{message}</p>}</FormElement.Error>
+</FormElement>;
+```
+
+and we recommend powering it with [yup](/error-handling).
+
+## Full example
+
+Here's a full example using the [HeadlessUI Switch](/form-elements/headlessui/switch) component.
+
+```tsx
+import { Form, FormElement } from "@formatomus/core";
+import { Switch } from "@formatomus/headlessui";
+import { useForm } from "react-hook-form";
+
+type FormData = { switch: boolean };
+
+const Component = () => {
+  const methods = useForm<FormData>();
+
+  return (
+    <Form methods={methods}>
+      <FormElement name="switch">
+        <FormElement.Label>Switch</FormElement.Label>
+
+        <Switch />
+
+        <FormElement.Error>{({ message }) => <p>{message}</p>}</FormElement.Error>
+      </FormElement>
+    </Form>
+  );
+};
+```

@@ -1,0 +1,84 @@
+---
+sidebar_position: 1
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Switch
+
+Switches for toggling a value between two states
+
+```tsx
+import { Switch } from "@formatomus/headlessui";
+
+<Switch />;
+```
+
+The `<Switch />` component includes all the props and namespaces the regular [HeadlessUI `<Switch />`](https://headlessui.com/react/switch) component has, while automatically registering the component to the `useForm` hook context.
+
+Ensure the component is wrapped in the [`<FormElement />`](/form-elements/headlessui#use-within-formatomus) component so that is it registered to your useForm hook context correctly.
+
+:::tip
+The HeadlessUI Switch component will always register as a **controlled input**
+:::
+
+## Styling
+
+Please refer to the HeadlessUI docs for their [Switch component](https://headlessui.com/react/switch), you can still achieve everything demonstrated there.
+
+We just simply wrap it with the `useForm` register logic for you!
+
+## [Error Handling](/form-elements/headlessui#error-handling)
+
+## Namespace crossover?
+
+You may notice that HeadlessUI exports a [`<Switch.Label />`](https://headlessui.com/react/switch#using-a-custom-label) component for adding an accessible label to the switch.
+
+While Formatomus also exports [`<FormElement.Label />`](/form-elements#element-label) for the same functionality, it is up to you which one you would like to use here (they both perform in the same way).
+
+For example:
+
+<Tabs>
+<TabItem value="formatomus" label="Formatomus' Label" default>
+
+```tsx
+import { FormElement } from "@formatomus/core";
+import { Switch } from "@formatomus/headlessui";
+
+<FormElement name="switch">
+  // highlight-next-line
+  <FormElement.Label>Switch</FormElement.Label>
+  <Switch />
+</FormElement>;
+```
+
+</TabItem>
+<TabItem value="headlessui" label="HeadlessUI's Label">
+
+```tsx
+import { FormElement } from "@formatomus/core";
+import { Switch } from "@formatomus/headlessui";
+
+<FormElement name="switch">
+  // highlight-start
+  <Switch.Group>
+    <Switch.Label>Switch</Switch.Label>
+    <Switch.Description>I've looked at the word Switch too much and now it looks funny</Switch.Description>
+    // highlight-end
+    <Switch />
+    // highlight-next-line
+  </Switch.Group>
+</FormElement>;
+```
+
+</TabItem>
+</Tabs>
+
+## Component API
+
+Please refer to the HeadlessUI docs for their [Switch component](https://headlessui.com/react/switch#component-api)
+
+:::caution
+However you can't use the props `id`, `onChange`, `onBlur`, `checked`, `ref`, `value`, `name`, `defaultChecked` as these are handled by React Form Hook
+:::

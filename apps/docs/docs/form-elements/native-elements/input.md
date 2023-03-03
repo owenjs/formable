@@ -14,7 +14,7 @@ import { FormElement } from "@formatomus/core";
 
 The `<FormElement.Input />` component includes all the native props the regular `<input />` element has, while automatically registering the element to the `useForm` hook context.
 
-Ensure the element is wrapped in the [`<FormElement />`](/form-elements/) component so that is it registered to your `useForm` hook context correctly.
+Ensure the component is wrapped in the [`<FormElement />`](/form-elements/) component so that is it registered to your `useForm` hook context correctly.
 
 ## Input Types
 
