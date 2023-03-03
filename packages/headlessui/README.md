@@ -1,6 +1,6 @@
 # Formatomus HeadlessUI
 
-Unstyled HeadlessUI form components which register to react-hook-form context automatically.
+Unstyled HeadlessUI form components which register to [react-hook-form](https://react-hook-form.com/) context automatically.
 
 ## Docs
 
