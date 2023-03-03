@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import { Form, FormElement } from "@owenjs/formable";
+import { Switch } from "@formatomus/headlessui";
 import { useForm } from "react-hook-form";
 import "./App.css";
 
@@ -8,12 +9,18 @@ function App() {
     defaultValues: {
       firstName: "",
       names: "Asda",
-      options: "default"
+      options: "default",
+      checkbox: true
     }
   });
 
   useEffect(() => {
-    methods.setError("firstName", {
+    const subscription = methods.watch((value, { name, type }) => console.log(value, name, type));
+    return () => subscription.unsubscribe();
+  }, [methods]);
+
+  useEffect(() => {
+    methods.setError("checkbox", {
       type: "manual",
       message: "Triple Check This"
     });
@@ -83,6 +90,23 @@ function App() {
               }
             ]}
           />
+
+          <FormElement.Error>{({ message }) => <p style={{ color: "red" }}>{message}</p>}</FormElement.Error>
+        </FormElement>
+
+        <FormElement
+          as="div"
+          name="checkbox"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            gap: "0.5rem"
+          }}
+        >
+          <FormElement.Label>Checkbox</FormElement.Label>
+
+          <Switch>{data => <>{JSON.stringify(data)}</>}</Switch>
 
           <FormElement.Error>{({ message }) => <p style={{ color: "red" }}>{message}</p>}</FormElement.Error>
         </FormElement>

@@ -11,6 +11,7 @@ const InputElement: FC<InputElementProps> = props => {
   const { id, name } = useContext(InputContext);
   const { register } = useFormContext();
 
+  // ToDo: type="checkbox" needs to be a controlled input?
   return <input {...register(name)} type={type} id={id} name={name} {...rest} />;
 };
 

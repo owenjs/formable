@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-export type TInputContext = {
+type TInputContext = {
   id: string;
   name: string;
   // ToDo: Add `RegisterOptions` here, passed as a prop to <Input />
