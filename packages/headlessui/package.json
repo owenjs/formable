@@ -1,6 +1,6 @@
 {
   "name": "@formatomus/headlessui",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "./index.tsx",
   "types": "./index.tsx",
   "homepage": "https://owenjs.github.io/formatomus/",
@@ -25,5 +25,11 @@
     "react-hook-form": "^7.43.3",
     "ts-jest": "^29.0.5",
     "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7",
+    "@headlessui/react": "^1"
   }
 }

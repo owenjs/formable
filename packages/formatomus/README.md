@@ -17,5 +17,5 @@ npm install @formatomus/core
 Add HeadlessUI form components to your Formatomus forms!
 
 ```shell
-npm install @formatomus/headlessui
+npm install @formatomus/headlessui @formatomus/headlessui @headlessui/react
 ```
