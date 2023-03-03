@@ -1,6 +1,6 @@
 {
-  "name": "@owenjs/formable",
-  "version": "0.1.1",
+  "name": "@formatomus/core",
+  "version": "0.1.0",
   "main": "./index.tsx",
   "types": "./index.tsx",
   "license": "MIT",
