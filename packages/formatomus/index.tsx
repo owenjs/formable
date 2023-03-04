@@ -1,4 +1,3 @@
-import * as React from "react";
 import InputContextDefault from "./FormElement/Context";
 
 export * from "./Button/Button";
